@@ -10,9 +10,13 @@
           <option name="url" value="https://github.com/Bartrijnders/Showcase_To_Do_App.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Bartrijnders/ToDoListApp.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/Documents/School 19:20/Semester 2/showcase" />
+    <option name="cloneParentDir" value="$USER_HOME$/Desktop" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="COLUMN_ORDER">
