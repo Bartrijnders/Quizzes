@@ -20,7 +20,11 @@
         </UrlAndUserName>
         <UrlAndUserName>
           <option name="url" value="http://git.fhict.nl" />
-          <option name="userName" value="bartrijnders94@gmail.com" />
+          <option name="userName" value="i282859@fhict.nl" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://git.fhict.nl/o-s2/zalando-toru-robot-expansion-case" />
+          <option name="userName" value="" />
         </UrlAndUserName>
       </list>
     </option>
