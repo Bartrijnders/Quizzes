@@ -14,9 +14,17 @@
           <option name="url" value="https://github.com/Bartrijnders/ToDoListApp.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://git.fhict.nl/o-s2/zalando-toru-robot-expansion-case.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://git.fhict.nl" />
+          <option name="userName" value="bartrijnders94@gmail.com" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="$USER_HOME$/Desktop" />
+    <option name="cloneParentDir" value="$USER_HOME$/Desktop/SCHOOL" />
   </component>
   <component name="Vcs.Log.App.Settings">
     <option name="COLUMN_ORDER">
