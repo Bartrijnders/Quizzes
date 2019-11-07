@@ -1,17 +1,38 @@
 <application>
   <component name="libraryTable">
-    <library name="javafx">
-      <CLASSES />
+    <library name="JavaFX_11">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx-swt.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.base.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.controls.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.fxml.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.graphics.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.media.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.swing.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
+      </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.base" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.controls" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.fxml" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.graphics" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.media" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.swing" />
-        <root url="file://$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib/src/javafx.web" />
-      </SOURCES>
+      <NATIVE>
+        <root url="file://$USER_HOME$/Documents/lib/javafx-sdk-11.0.2/lib" />
+      </NATIVE>
+      <SOURCES />
+    </library>
+    <library name="JavaFX_13">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx-swt.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.base.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.controls.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.fxml.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.graphics.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.media.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.swing.jar!/" />
+        <root url="jar://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib/javafx.web.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <NATIVE>
+        <root url="file://$USER_HOME$/Documents/lib/javafx-sdk-13.0.1/lib" />
+      </NATIVE>
+      <SOURCES />
     </library>
   </component>
 </application>
