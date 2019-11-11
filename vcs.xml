@@ -26,6 +26,10 @@
           <option name="url" value="https://git.fhict.nl/o-s2/zalando-toru-robot-expansion-case" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/Bartrijnders/ShowCase_S2.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Desktop/SCHOOL" />
