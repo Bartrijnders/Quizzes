@@ -1,0 +1,3 @@
+module ApplicationLogic {
+    requires InterfaceLayer;
+}
