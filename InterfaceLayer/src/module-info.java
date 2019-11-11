@@ -1,0 +1,3 @@
+module InterfaceLayer {
+    exports entityInterfaces;
+}
