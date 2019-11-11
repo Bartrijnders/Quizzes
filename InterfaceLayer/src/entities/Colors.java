@@ -5,6 +5,5 @@ public enum Colors {
     RED,
     YELLOW,
     GREEN,
-    PURPLE,
-    ORANGE
+    PURPLE
 }
