@@ -1,4 +1,4 @@
-package fileSave;
+package filedata;
 
 import entityInterfaces.IList;
 
@@ -13,15 +13,10 @@ public class FIleSaver implements IDataSaver {
 
     @Override
     public void save(IList list) throws IOException {
-        try{
-
-            File file = SaveFileFinder.getSaveFile();
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        File file = SaveFileFinder.getSaveFile();
+        try(FileOutputStream fileOutputStream = new FileOutputStream(file);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);){
             objectOutputStream.writeObject(list);
-            objectOutputStream.close();
-            fileOutputStream.close();
-
             System.out.println("List succesfully written to file");
 
         }catch (IOException e){
