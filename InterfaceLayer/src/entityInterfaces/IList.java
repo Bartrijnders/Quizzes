@@ -1,4 +1,6 @@
 package entityInterfaces;
 
-public interface IList {
+import java.io.Serializable;
+
+public interface IList extends Serializable {
 }
