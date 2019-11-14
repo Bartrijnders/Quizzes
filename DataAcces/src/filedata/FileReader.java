@@ -1,6 +1,7 @@
 package filedata;
 
 import entityInterfaces.IList;
+import filedataInterfaces.IDataReader;
 
 import java.io.File;
 import java.io.FileInputStream;

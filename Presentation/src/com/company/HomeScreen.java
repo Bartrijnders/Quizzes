@@ -1,15 +1,13 @@
 package com.company;
 
 import javafx.scene.Scene;
+import javafx.scene.control.TreeView;
 
-public class HomeScreen {
+public class HomeScreen extends StandardScene{
 
-private Scene scene;
-private final int width;
-private final int height;
-
-    public HomeScreen(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public HomeScreen() {
     }
+
+
+
 }

@@ -1,6 +1,7 @@
 package filedata;
 
 import entityInterfaces.IList;
+import filedataInterfaces.IDataSaver;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,7 +13,7 @@ public class FIleSaver implements IDataSaver {
 
 
     @Override
-    public void save(IList list) throws IOException {
+    public  void save(IList list){
         File file = SaveFileFinder.getSaveFile();
         try(FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);){
