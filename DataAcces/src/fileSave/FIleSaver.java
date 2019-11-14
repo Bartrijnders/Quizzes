@@ -7,11 +7,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public class FIleSaver {
+public class FIleSaver implements IDataSaver {
 
 
 
-    public void saveToFIle(IList list) throws IOException {
+    @Override
+    public void save(IList list) throws IOException {
         try{
 
             File file = SaveFileFinder.getSaveFile();
