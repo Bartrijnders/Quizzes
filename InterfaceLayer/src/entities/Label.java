@@ -1,6 +1,6 @@
 package entities;
-import entityInterfaces.ILabel;
 
+import entityInterfaces.ILabel;
 
 import java.io.Serializable;
 

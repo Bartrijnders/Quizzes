@@ -3,6 +3,7 @@ package entities;
 import entityInterfaces.IFolder;
 import entityInterfaces.IListItem;
 import entityInterfaces.IToDoList;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

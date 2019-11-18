@@ -6,7 +6,7 @@ import entityInterfaces.IListItem;
 import java.io.Serializable;
 import java.util.List;
 
-public class Folder implements IFolder, Serializable{
+public class Folder implements IFolder, Serializable {
     private List<IListItem> items;
     private String title;
 

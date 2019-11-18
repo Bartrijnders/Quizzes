@@ -1,6 +1,7 @@
 package entityInterfaces;
 
 import entities.Colors;
+
 import java.io.Serializable;
 
 public interface ILabel extends Serializable {
