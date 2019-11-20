@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 public class FileDataLoader implements IDataLoader {
 
     @Override
-    public IToDoList read() {
+    public IToDoList load() {
         IToDoList output = null;
         File file = SaveFileFinder.getSaveFile();
         assert file != null;
