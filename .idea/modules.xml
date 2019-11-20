@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/dataacces/DataAcces.iml" filepath="$PROJECT_DIR$/dataacces/DataAcces.iml" />
       <module fileurl="file://$PROJECT_DIR$/domein/domein.iml" filepath="$PROJECT_DIR$/domein/domein.iml" />
       <module fileurl="file://$PROJECT_DIR$/logic/logic.iml" filepath="$PROJECT_DIR$/logic/logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/presentation/presentation.iml" filepath="$PROJECT_DIR$/presentation/presentation.iml" />
       <module fileurl="file://$PROJECT_DIR$/todolist.iml" filepath="$PROJECT_DIR$/todolist.iml" />
     </modules>
   </component>

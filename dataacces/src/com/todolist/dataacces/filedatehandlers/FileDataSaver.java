@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class
-FileDataSaver {
+FileDataSaver implements IDataSaver {
 
 
     public void save(IToDoList toDoList) {
