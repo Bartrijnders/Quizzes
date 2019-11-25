@@ -1,5 +1,6 @@
 package com.todolist.dataacces.filedatehandlers;
 
+import com.todolist.domain.factorys.ToDoListFactory;
 import com.todolist.domain.interfaces.IToDoList;
 
 import java.io.File;
@@ -20,7 +21,7 @@ public class FileDataLoader implements IDataLoader {
 
         } catch (Exception e) {
             System.out.println("ERROR in file reading\n" + e.getMessage());
-            return output;
+            return ToDoListFactory.create("list");
         } finally {
             if (output != null) {
                 System.out.println("reading save file succeeded");

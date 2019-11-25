@@ -1,6 +1,7 @@
 package com.todolist.domain.interfaces;
 
 import java.util.Date;
+import java.util.List;
 
 public interface ITask {
     String getTitle();
@@ -16,4 +17,8 @@ public interface ITask {
     ILabel getLabel();
 
     void setLabel(ILabel label);
+
+    void setDetails(List<IDetail> details);
+
+    List<IDetail> getDetails();
 }
