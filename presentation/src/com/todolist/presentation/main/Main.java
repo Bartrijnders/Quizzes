@@ -1,22 +1,26 @@
 package com.todolist.presentation.main;
 
-import com.todolist.domain.interfaces.ITask;
 import com.todolist.domain.interfaces.IToDoList;
-import com.todolist.logic.printers.TaskPrinter;
 import com.todolist.logic.todolistlogic.ToDoListLoader;
 import com.todolist.logic.todolistlogic.ToDoListSaver;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public class Main {
+
+public class Main extends Application {
 
     public static void main(String[] args) {
+        launch(args);
+
+
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("To-Do List app");
         IToDoList list = ToDoListLoader.load();
 
-        TaskPrinter tp = new TaskPrinter();
-        for (ITask task : list.getItems()) {
-            tp.print(task);
-        }
 
         ToDoListSaver.save(list);
-
     }
 }
