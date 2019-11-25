@@ -1,10 +1,13 @@
 package com.todolist.domain.entities;
 
+import com.todolist.domain.interfaces.IDetail;
 import com.todolist.domain.interfaces.ILabel;
 import com.todolist.domain.interfaces.ITask;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Task implements ITask, Serializable {
 
@@ -13,11 +16,13 @@ public class Task implements ITask, Serializable {
     private boolean checked;
     private final Date dateOfCreation;
     private ILabel label;
+    private List<IDetail> details;
 
     public Task(String title) {
         this.title = title;
         this.checked = false;
         this.dateOfCreation = new Date(System.currentTimeMillis());
+        details = new ArrayList<>();
     }
 
     @Override
@@ -53,5 +58,13 @@ public class Task implements ITask, Serializable {
     @Override
     public void setLabel(ILabel label) {
         this.label = label;
+    }
+
+    public List<IDetail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<IDetail> details) {
+        this.details = details;
     }
 }

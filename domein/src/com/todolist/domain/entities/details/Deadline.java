@@ -26,4 +26,8 @@ public class Deadline implements IDetail, Serializable {
     public String getType() {
         return type;
     }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
 }
