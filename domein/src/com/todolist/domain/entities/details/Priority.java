@@ -3,7 +3,9 @@ package com.todolist.domain.entities.details;
 import com.todolist.domain.enums.Priorities;
 import com.todolist.domain.interfaces.IDetail;
 
-public class Priority implements IDetail {
+import java.io.Serializable;
+
+public class Priority implements IDetail, Serializable {
 
     private Priorities prio;
     private String type;

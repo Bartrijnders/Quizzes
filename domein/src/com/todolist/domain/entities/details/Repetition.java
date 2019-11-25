@@ -2,7 +2,9 @@ package com.todolist.domain.entities.details;
 
 import com.todolist.domain.interfaces.IDetail;
 
-public class Repetition implements IDetail {
+import java.io.Serializable;
+
+public class Repetition implements IDetail, Serializable {
 
     private Repetition rep;
     private String type;

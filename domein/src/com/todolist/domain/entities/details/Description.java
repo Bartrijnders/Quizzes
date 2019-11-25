@@ -2,7 +2,9 @@ package com.todolist.domain.entities.details;
 
 import com.todolist.domain.interfaces.IDetail;
 
-public class Description implements IDetail {
+import java.io.Serializable;
+
+public class Description implements IDetail, Serializable {
 
     private String text;
     private String type;
