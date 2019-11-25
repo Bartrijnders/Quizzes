@@ -73,3 +73,21 @@ n
 >logic/src/com/todolist/logic/todolistlogic/ToDoListLoader.java,d/3/d3f685e02dc2b8c0364a71cd30f51622f1413ab7
 i
 9presentation/src/com/todolist/presentation/main/Main.java,4/2/429bffe0c71265f33bebafa70ef3a581ea29f6e0
+d
+4domein/src/com/todolist/domain/enums/Priorities.java,d/4/d4a46f43797760ea53700a7068dce2a816744550
+m
+=domein/src/com/todolist/domain/enums/RepetitionIntervals.java,b/e/be252533e41ed287d9154554c0e99148fbf375be
+p
+@domein/src/com/todolist/domain/entities/details/Description.java,3/0/3068103494cae72708f0de6471a7f816e6964772
+m
+=domein/src/com/todolist/domain/entities/details/Priority.java,6/d/6da95989ac7366e199adfec8eea7584fb34e430a
+o
+?domein/src/com/todolist/domain/entities/details/Repetition.java,7/e/7e4b1cee58ce46383af78408f25d4ec7145da7e6
+f
+6domein/src/com/todolist/domain/interfaces/IDetail.java,8/3/83ea8fa2dc455e1777b7b6c1628b15f51ea7930c
+m
+=domein/src/com/todolist/domain/entities/details/Deadline.java,d/d/ddab3c1cecdbd5f9bd8ece531612a589a3983632
+f
+6logic/src/com/todolist/logic/printers/TaskPrinter.java,6/b/6b2fb11c471bae61a8ba640b7eac196811c3e524
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

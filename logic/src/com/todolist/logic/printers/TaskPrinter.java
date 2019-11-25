@@ -16,6 +16,7 @@ public class TaskPrinter {
                 System.out.println(detail.getType() + ": " + detail.getValue());
             }
         }
+        System.out.println("------------------------------------------------------------------------");
 
     }
 }
