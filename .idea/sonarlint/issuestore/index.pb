@@ -91,3 +91,13 @@ f
 6logic/src/com/todolist/logic/printers/TaskPrinter.java,6/b/6b2fb11c471bae61a8ba640b7eac196811c3e524
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+N
+dataacces/src/module-info.java,7/3/73a60ef6ac77bc20f1870627e49dc15747ad4f82
+J
+logic/src/module-info.java,a/2/a2d065480e94bdde73f8170d7515c8c1291df1db
+Q
+!presentation/src/module-info.java,e/c/ecc02f27a74121ffcb4065863dd63e3e6d7faa7b
+K
+domein/src/module-info.java,4/b/4b221d89af4776f050748e217cbf281834a3e795
+M
+.idea/libraries/javaFX_13.xml,c/b/cb783be6e0247a072713e2ea42b78949965266e9
