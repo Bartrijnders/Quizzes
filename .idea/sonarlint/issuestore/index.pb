@@ -101,3 +101,11 @@ K
 domein/src/module-info.java,4/b/4b221d89af4776f050748e217cbf281834a3e795
 M
 .idea/libraries/javaFX_13.xml,c/b/cb783be6e0247a072713e2ea42b78949965266e9
+r
+Bpresentation/src/com/todolist/presentation/fxmlfiles/homepage.fxml,8/b/8b1ba62be9eafedce517799d080d6f9a3e443ecd
+x
+Hpresentation/src/com/todolist/presentation/components/TaskComponent.java,5/0/50a8ad285f7ec14713edfc9b2192d0bac76ea9f8
+~
+Npresentation/src/com/todolist/presentation/controllers/HomePageController.java,8/9/89650016e1bcbc60a416214b824bf3431df7279b
+n
+>logic/src/com/todolist/logic/todolistlogic/TaskGetterDate.java,f/8/f8c46ca9224e058c74dd772cf685bcda37c16f0f
