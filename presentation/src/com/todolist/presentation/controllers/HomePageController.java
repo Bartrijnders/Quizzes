@@ -3,10 +3,13 @@ package com.todolist.presentation.controllers;
 import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
 import com.todolist.domain.interfaces.IToDoList;
+import com.todolist.logic.todolistlogic.LocalDateToDateConV;
 import com.todolist.logic.todolistlogic.TaskGetterDate;
 import com.todolist.logic.todolistlogic.ToDoListLoader;
+import com.todolist.logic.todolistlogic.ToDoListSaver;
 import com.todolist.presentation.components.TaskComponent;
 import com.todolist.presentation.eventHandlers.homepage.NewTaskButtonEvent;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -42,7 +45,7 @@ public class HomePageController implements Initializable {
 
     private IToDoList list;
 
-
+    private ITask task;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,9 +53,9 @@ public class HomePageController implements Initializable {
         fillInData();
         shapeVbox();
         getTreeviewContent();
-        getItems();
-        NewTaskButtonEvent newTaskButtonEvent = new NewTaskButtonEvent();
-        newTaskButton.setOnAction(e -> newTaskButtonEvent.handleClick(e));
+        getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+        newTaskButton.setOnAction(e -> handleNewButton(e));
+        datePicker.valueProperty().addListener((observable, oldValue, newValue) -> getItems(LocalDateToDateConV.convertToDate(newValue)));
     }
 
     public void shapeVbox(){
@@ -64,9 +67,11 @@ public class HomePageController implements Initializable {
         datePicker.setValue(LocalDate.now());
     }
 
-    public void getItems(){
+    public void getItems(Date date){
         TaskGetterDate taskGetterDate = new TaskGetterDate();
         ArrayList<ITask> worklist = taskGetterDate.getTaskByDate(list, date);
+        viewVbox.getChildren().clear();
+        if(!worklist.isEmpty())
         for(ITask task : worklist){
             TaskComponent taskComponent = new TaskComponent(task);
             viewVbox.getChildren().addAll(taskComponent.getLayout());
@@ -92,6 +97,18 @@ public class HomePageController implements Initializable {
         TreeItem<String> item = new TreeItem<>(name);
         parent.getChildren().add(item);
         return item;
+    }
+
+    public void handleNewButton(ActionEvent e){
+        NewTaskButtonEvent newTaskButtonEvent = new NewTaskButtonEvent();
+        task = newTaskButtonEvent.handleClick(e);
+        list.getItems().add(task);
+        ToDoListSaver.save(list);
+        getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+    }
+
+    public void onClose(){
+        ToDoListSaver.save(list);
     }
 
 

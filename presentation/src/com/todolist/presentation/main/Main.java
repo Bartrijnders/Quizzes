@@ -24,4 +24,9 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setTitle("To-Do List app");
     }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+    }
 }

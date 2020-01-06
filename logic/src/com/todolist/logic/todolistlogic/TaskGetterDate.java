@@ -9,12 +9,22 @@ import java.util.List;
 
 public class TaskGetterDate {
     public ArrayList<ITask> getTaskByDate(IToDoList list, Date date){
-        ArrayList<ITask> output = new ArrayList();
-        for(ITask task : list.getItems()){
-            if(task.getDateOfCreation() == date){
-                output.add(task);
+        try{
+            ArrayList<ITask> output = new ArrayList();
+            date = DateFormatter.format(date);
+            for(ITask task : list.getItems()){
+                if(task != null){
+                    Date taskdate = DateFormatter.format(task.getDateOfCreation());
+                    if(taskdate.compareTo(date)==0){
+                        output.add(task);
+                    }
+                }
+
             }
+            return output;
+        }catch (Exception e){
+            return null;
         }
-        return output;
+
     }
 }

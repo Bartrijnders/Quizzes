@@ -25,6 +25,13 @@ public class Task implements ITask, Serializable {
         details = new ArrayList<>();
     }
 
+    public Task(String title, Date date){
+        this.title = title;
+        this.checked = false;
+        this.dateOfCreation = date;
+        details = new ArrayList<>();
+    }
+
     @Override
     public String getTitle() {
         return title;
