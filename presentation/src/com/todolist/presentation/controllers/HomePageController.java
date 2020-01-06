@@ -5,8 +5,8 @@ import com.todolist.domain.interfaces.ITask;
 import com.todolist.domain.interfaces.IToDoList;
 import com.todolist.logic.todolistlogic.TaskGetterDate;
 import com.todolist.logic.todolistlogic.ToDoListLoader;
-import com.todolist.logic.todolistlogic.ToDoListSaver;
 import com.todolist.presentation.components.TaskComponent;
+import com.todolist.presentation.eventHandlers.homepage.NewTaskButtonEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -34,7 +34,11 @@ public class HomePageController implements Initializable {
     @FXML
     private VBox viewVbox;
     @FXML
-    private Button newButton;
+    private Button newTaskButton;
+    @FXML
+    private Button newFolderButton;
+    @FXML
+    private Button newLabelButton;
 
     private IToDoList list;
 
@@ -45,10 +49,10 @@ public class HomePageController implements Initializable {
         list = ToDoListLoader.load();
         fillInData();
         shapeVbox();
-        newButton.setOnAction(e -> newButtonAction());
         getTreeviewContent();
         getItems();
-        ToDoListSaver.save(list);
+        NewTaskButtonEvent newTaskButtonEvent = new NewTaskButtonEvent();
+        newTaskButton.setOnAction(e -> newTaskButtonEvent.handleClick(e));
     }
 
     public void shapeVbox(){
@@ -90,7 +94,6 @@ public class HomePageController implements Initializable {
         return item;
     }
 
-    public void newButtonAction(){
 
-    }
+
 }

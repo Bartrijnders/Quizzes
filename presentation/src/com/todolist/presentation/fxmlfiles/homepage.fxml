@@ -29,7 +29,8 @@
          <bottom>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
-                <Button fx:id="newButton" mnemonicParsing="false" text="New" />
+                <Button fx:id="newTaskButton" mnemonicParsing="false" text="New Task" />
+                  <Button fx:id="newFolderButton" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" text="New Folder" />
               </items>
             </ToolBar>
          </bottom>
