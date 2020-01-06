@@ -47,7 +47,7 @@ public class TaskComponent extends Node {
 
     private void createLayout(){
         layout = new GridPane();
-        layout.setGridLinesVisible(true);
+        layout.setGridLinesVisible(false);
         RowConstraints row1 = new RowConstraints();
         row1.setVgrow(Priority.ALWAYS);
         ColumnConstraints col1 = new ColumnConstraints();

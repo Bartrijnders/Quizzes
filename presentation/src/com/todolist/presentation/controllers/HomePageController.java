@@ -8,6 +8,7 @@ import com.todolist.logic.todolistlogic.TaskGetterDate;
 import com.todolist.logic.todolistlogic.ToDoListLoader;
 import com.todolist.logic.todolistlogic.ToDoListSaver;
 import com.todolist.presentation.components.TaskComponent;
+import com.todolist.presentation.eventHandlers.homepage.NewFolderButtonEvent;
 import com.todolist.presentation.eventHandlers.homepage.NewTaskButtonEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,6 +48,8 @@ public class HomePageController implements Initializable {
 
     private ITask task;
 
+    private IFolder folder;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = ToDoListLoader.load();
@@ -55,6 +58,7 @@ public class HomePageController implements Initializable {
         getTreeviewContent();
         getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
         newTaskButton.setOnAction(e -> handleNewButton(e));
+        newFolderButton.setOnAction(e -> handleNewFolderButton(e));
         datePicker.valueProperty().addListener((observable, oldValue, newValue) -> getItems(LocalDateToDateConV.convertToDate(newValue)));
     }
 
@@ -79,18 +83,28 @@ public class HomePageController implements Initializable {
     }
 
     public void getTreeviewContent(){
-
         //root branch
+        contentTreeview.setRoot(null);
         TreeItem<String> root;
         root = new TreeItem<>("Folders");
         root.setExpanded(true);
         contentTreeview.setRoot(root);
 
-
         //folders branch
+        if(!list.getFolders().isEmpty()){
             for(IFolder folder: list.getFolders()){
-                makeBranch(folder.getTitle(), root);
+                if(folder == null){
+                    list.getFolders().remove(folder);
+                    ToDoListSaver.save(list);
+                }
             }
+            for(IFolder folder : list.getFolders()){
+                    TreeItem<String> treeItem = new TreeItem<>(folder.getTitle());
+                    root.getChildren().add(treeItem);
+
+            }
+        }
+
     }
 
     public TreeItem<String> makeBranch(String name, TreeItem<String> parent){
@@ -109,6 +123,14 @@ public class HomePageController implements Initializable {
 
     public void onClose(){
         ToDoListSaver.save(list);
+    }
+
+    public void handleNewFolderButton(ActionEvent e){
+        NewFolderButtonEvent newfolderbuttonevent = new NewFolderButtonEvent();
+        folder = newfolderbuttonevent.handleClick(e);
+        list.getFolders().add(folder);
+        ToDoListSaver.save(list);
+        getTreeviewContent();
     }
 
 
