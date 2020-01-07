@@ -1,8 +1,12 @@
 package com.todolist.presentation.components;
 
 import com.todolist.domain.interfaces.ITask;
+import com.todolist.domain.interfaces.IToDoList;
+import com.todolist.logic.todolistlogic.TaskRemover;
 import com.todolist.logic.todolistlogic.ToDoListSaver;
+import com.todolist.presentation.alerts.DeleteAlertBox;
 import com.todolist.presentation.controllers.EditTaskPageController;
+import com.todolist.presentation.controllers.HomePageController;
 import com.todolist.presentation.controllers.newtaskpageController;
 import com.todolist.presentation.eventHandlers.TaskEvents;
 import javafx.beans.value.ChangeListener;
@@ -12,10 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
@@ -35,9 +36,14 @@ public class TaskComponent extends Node {
     private ITask task;
     private ContextMenu contextMenu;
     private MenuItem editMenuItem;
+    private MenuItem deleteMenuItem;
+    private IToDoList toDoList;
+    private HomePageController homePageController;
 
 
-    public TaskComponent(ITask task) {
+    public TaskComponent(ITask task, IToDoList toDoList, HomePageController homePageController) {
+        this.homePageController = homePageController;
+        this.toDoList = toDoList;
         this.task = task;
         taskTitleLabel = new Label(task.getTitle());
         checkBox = new CheckBox();
@@ -49,8 +55,11 @@ public class TaskComponent extends Node {
         layout.add(checkBox,1,1,1,1);
         contextMenu = new ContextMenu();
         editMenuItem = new MenuItem("Edit");
+        deleteMenuItem = new MenuItem(("Delete"));
         contextMenu.getItems().add(editMenuItem);
-        addEditOption();
+        contextMenu.getItems().add(deleteMenuItem);
+        addOptions();
+        addDeleteOption();
     }
 
     public GridPane getLayout() {
@@ -88,7 +97,7 @@ public class TaskComponent extends Node {
             }
         });
     }
-    public void addEditOption(){
+    public void addOptions(){
         editMenuItem.setOnAction(e -> {
             try {
                 EditTaskPageController editTaskPageController = new EditTaskPageController();
@@ -124,4 +133,15 @@ public class TaskComponent extends Node {
     public ITask getTask() {
         return task;
     }
+
+    public void addDeleteOption(){
+        deleteMenuItem.setOnAction(event -> {
+            if(DeleteAlertBox.show()){
+                TaskRemover.remove(toDoList, task);
+                homePageController.getItems(task.getDateOfCreation());
+            }
+        });
+    }
+
+
 }

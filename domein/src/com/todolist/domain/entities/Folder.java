@@ -34,5 +34,8 @@ public class Folder implements IFolder, Serializable {
         this.title = title;
     }
 
-
+    @Override
+    public String toString() {
+        return title;
+    }
 }

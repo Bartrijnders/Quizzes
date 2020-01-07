@@ -1,5 +1,6 @@
 package com.todolist.presentation.controllers;
 
+import com.todolist.domain.factorys.FolderFactory;
 import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
 import com.todolist.domain.interfaces.IToDoList;
@@ -19,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.swing.event.ChangeListener;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -32,7 +35,7 @@ public class HomePageController implements Initializable {
 
 
     @FXML
-    private TreeView<String> contentTreeview;
+    private TreeView<IFolder> contentTreeview;
     @FXML
     private DatePicker datePicker;
     @FXML
@@ -81,7 +84,7 @@ public class HomePageController implements Initializable {
         viewVbox.getChildren().clear();
         if(!worklist.isEmpty())
         for(ITask task : worklist){
-            TaskComponent taskComponent = new TaskComponent(task);
+            TaskComponent taskComponent = new TaskComponent(task, list, this);
             viewVbox.getChildren().addAll(taskComponent.getLayout());
         }
     }
@@ -89,15 +92,29 @@ public class HomePageController implements Initializable {
     public void getTreeviewContent(){
         //root branch
         contentTreeview.setRoot(null);
-        TreeItem<String> root;
-        root = new TreeItem<>("Folders");
+        boolean check = false;
+        IFolder rootFolder;
+        for(IFolder f : list.getFolders()){
+            if(f.getTitle().equals("Folder"));
+            rootFolder = f;
+            check= true;
+            break;
+        }
+        if(check == false){
+            rootFolder = FolderFactory.create("Folder");
+        }
+        else{
+            rootFolder = null;
+        }
+        TreeItem<IFolder> root;
+        root = new TreeItem<>(rootFolder);
         root.setExpanded(true);
         contentTreeview.setRoot(root);
 
         //folders branch
         if(!list.getFolders().isEmpty()){
             for(IFolder folder : list.getFolders()){
-                    TreeItem<String> treeItem = new TreeItem<>(folder.getTitle());
+                    TreeItem<IFolder> treeItem = new TreeItem<>(folder);
                     root.getChildren().add(treeItem);
             }
         }
@@ -135,6 +152,7 @@ public class HomePageController implements Initializable {
         }
 
     }
+
 
 
 
