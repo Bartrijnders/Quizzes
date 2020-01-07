@@ -3,13 +3,11 @@ package com.todolist.presentation.controllers;
 import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
 import com.todolist.domain.interfaces.IToDoList;
-import com.todolist.logic.todolistlogic.LocalDateToDateConV;
-import com.todolist.logic.todolistlogic.TaskGetterDate;
-import com.todolist.logic.todolistlogic.ToDoListLoader;
-import com.todolist.logic.todolistlogic.ToDoListSaver;
+import com.todolist.logic.todolistlogic.*;
 import com.todolist.presentation.components.TaskComponent;
 import com.todolist.presentation.eventHandlers.homepage.NewFolderButtonEvent;
 import com.todolist.presentation.eventHandlers.homepage.NewTaskButtonEvent;
+import com.todolist.presentation.main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,7 +15,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -43,6 +43,8 @@ public class HomePageController implements Initializable {
     private Button newFolderButton;
     @FXML
     private Button newLabelButton;
+    @FXML
+    private AnchorPane anchorPane;
 
     private IToDoList list;
 
@@ -54,12 +56,14 @@ public class HomePageController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         list = ToDoListLoader.load();
         fillInData();
+        ClearList.clear(list);
         shapeVbox();
         getTreeviewContent();
         getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
         newTaskButton.setOnAction(e -> handleNewButton(e));
         newFolderButton.setOnAction(e -> handleNewFolderButton(e));
         datePicker.valueProperty().addListener((observable, oldValue, newValue) -> getItems(LocalDateToDateConV.convertToDate(newValue)));
+        Main.getPs().setOnCloseRequest(e->ToDoListSaver.save(list));
     }
 
     public void shapeVbox(){
@@ -92,16 +96,9 @@ public class HomePageController implements Initializable {
 
         //folders branch
         if(!list.getFolders().isEmpty()){
-            for(IFolder folder: list.getFolders()){
-                if(folder == null){
-                    list.getFolders().remove(folder);
-                    ToDoListSaver.save(list);
-                }
-            }
             for(IFolder folder : list.getFolders()){
                     TreeItem<String> treeItem = new TreeItem<>(folder.getTitle());
                     root.getChildren().add(treeItem);
-
             }
         }
 
@@ -116,9 +113,12 @@ public class HomePageController implements Initializable {
     public void handleNewButton(ActionEvent e){
         NewTaskButtonEvent newTaskButtonEvent = new NewTaskButtonEvent();
         task = newTaskButtonEvent.handleClick(e);
-        list.getItems().add(task);
-        ToDoListSaver.save(list);
-        getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+        if(task != null){
+            list.getItems().add(task);
+            ToDoListSaver.save(list);
+            getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+        }
+
     }
 
     public void onClose(){
@@ -127,10 +127,13 @@ public class HomePageController implements Initializable {
 
     public void handleNewFolderButton(ActionEvent e){
         NewFolderButtonEvent newfolderbuttonevent = new NewFolderButtonEvent();
-        folder = newfolderbuttonevent.handleClick(e);
-        list.getFolders().add(folder);
-        ToDoListSaver.save(list);
-        getTreeviewContent();
+        folder = newfolderbuttonevent.handleClick(e, list);
+        if (folder != null) {
+            list.getFolders().add(folder);
+            ToDoListSaver.save(list);
+            getTreeviewContent();
+        }
+
     }
 
 

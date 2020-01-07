@@ -14,7 +14,7 @@ public class Task implements ITask, Serializable {
     //fields
     private String title;
     private boolean checked;
-    private final Date dateOfCreation;
+    private Date dateOfCreation;
     private ILabel label;
     private List<IDetail> details;
 
@@ -60,6 +60,11 @@ public class Task implements ITask, Serializable {
     @Override
     public ILabel getLabel() {
         return label;
+    }
+
+    @Override
+    public void setDateOfCreation(Date dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
     }
 
     @Override

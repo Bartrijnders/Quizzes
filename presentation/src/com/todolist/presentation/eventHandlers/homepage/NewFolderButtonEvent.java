@@ -2,6 +2,7 @@ package com.todolist.presentation.eventHandlers.homepage;
 
 import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
+import com.todolist.domain.interfaces.IToDoList;
 import com.todolist.presentation.controllers.newfolderpageController;
 import com.todolist.presentation.controllers.newtaskpageController;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ import java.io.IOException;
 
 public class NewFolderButtonEvent {
 
-    public IFolder handleClick(ActionEvent event){
+    public IFolder handleClick(ActionEvent event, IToDoList list){
         try {
             newfolderpageController newfolderpageController = new newfolderpageController();
             FXMLLoader fxmlLoader = new FXMLLoader();
@@ -23,6 +24,7 @@ public class NewFolderButtonEvent {
             fxmlLoader.setController(newfolderpageController);
             Parent root = fxmlLoader.load();
             Stage window = new Stage();
+            newfolderpageController.setList(list);
             window.setTitle("folder aanmaken");
             Scene scene = new Scene(root, 600, 400);
             window.setScene(scene);

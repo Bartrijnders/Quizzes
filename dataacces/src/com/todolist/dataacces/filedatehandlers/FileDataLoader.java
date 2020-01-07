@@ -21,7 +21,7 @@ public class FileDataLoader implements IDataLoader {
 
         } catch (Exception e) {
             System.out.println("ERROR in file reading\n" + e.getMessage());
-            return ToDoListFactory.create("list");
+            return ToDoListFactory.create();
         } finally {
             if (output != null) {
                 System.out.println("reading save file succeeded");

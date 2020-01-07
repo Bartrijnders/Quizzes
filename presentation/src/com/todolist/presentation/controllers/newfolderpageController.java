@@ -2,13 +2,18 @@ package com.todolist.presentation.controllers;
 
 import com.todolist.domain.factorys.FolderFactory;
 import com.todolist.domain.interfaces.IFolder;
+import com.todolist.domain.interfaces.IToDoList;
+import com.todolist.presentation.alerts.NotUniqueAlert;
+import com.todolist.presentation.alerts.ReqInfoAlert;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class newfolderpageController implements Initializable {
@@ -22,6 +27,8 @@ public class newfolderpageController implements Initializable {
 
     @FXML
     private Button confirmButton;
+
+    private IToDoList list;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,11 +48,27 @@ public class newfolderpageController implements Initializable {
 
     public void confirmEvent(){
         if(titleTextField.getText().isEmpty()){
-
+            ReqInfoAlert.show("Geen titel ingevuld. vul deze a.u.b. in");
         }
         else{
+            for(IFolder tempFolder : list.getFolders()){
+                if (tempFolder.getTitle().equals(titleTextField.getText())){
+                    NotUniqueAlert.show("Folder titel is niet unique, kies een andere titel");
+                    return;
+                }
+            }
             answer = FolderFactory.create(titleTextField.getText());
             close();
         }
     }
+
+    public void setList(IToDoList list) {
+        this.list = list;
+    }
+
+    public IToDoList getList() {
+        return list;
+    }
+
+
 }

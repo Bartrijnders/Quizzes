@@ -2,30 +2,28 @@ package com.todolist.presentation.controllers;
 
 import com.todolist.domain.factorys.TaskFactory;
 import com.todolist.domain.interfaces.ITask;
+import com.todolist.logic.todolistlogic.DateFormatter;
 import com.todolist.logic.todolistlogic.LocalDateToDateConV;
-import com.todolist.logic.todolistlogic.ToDoListSaver;
 import com.todolist.presentation.alerts.ReqInfoAlert;
-import com.todolist.presentation.eventHandlers.newtaskpage.CancelButtonEvent;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import javax.swing.text.StyledEditorKit;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
 
-public class newtaskpageController implements Initializable {
+public class EditTaskPageController implements Initializable {
+
 
     static ITask answer;
+    private ITask workTask;
 
     @FXML
     private DatePicker datePicker;
@@ -45,7 +43,7 @@ public class newtaskpageController implements Initializable {
 
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
-       close();
+        close();
     }
 
     @FXML
@@ -55,7 +53,9 @@ public class newtaskpageController implements Initializable {
 
         }
         else{
-            answer = TaskFactory.create(titleTextField.getText(), LocalDateToDateConV.convertToDate(datePicker.getValue()));
+            workTask.setTitle(titleTextField.getText());
+            workTask.setDateOfCreation(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+            answer = workTask;
             close();
         }
     }
@@ -73,7 +73,7 @@ public class newtaskpageController implements Initializable {
         cancelButton.setOnAction(e -> {
             handleCloseButtonAction(e);
         });
-        datePicker.setValue(LocalDate.now());
+
         titleTextField.setPromptText("Vul hier uw titel in");
         confirmButton.setOnAction(e -> handleConfirmButtonAction(e));
     }
@@ -85,7 +85,7 @@ public class newtaskpageController implements Initializable {
 
     public Boolean checkNotEmpty(){
         if(titleTextField.getText().isEmpty() || datePicker.getValue() == null) {
-        return false;
+            return false;
         }else{
             return true;
         }
@@ -103,6 +103,12 @@ public class newtaskpageController implements Initializable {
         }
         sb.append("Vul de bovenstaande info alsnog in a.u.b.");
         return sb.toString();
+    }
+
+    public void setWorkTask(ITask workTask) {
+        this.workTask = workTask;
+        datePicker.setValue(LocalDateToDateConV.convertToLocalDate(workTask.getDateOfCreation()));
+        titleTextField.setText(workTask.getTitle());
     }
 
 

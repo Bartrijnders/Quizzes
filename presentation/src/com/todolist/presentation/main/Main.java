@@ -1,5 +1,6 @@
 package com.todolist.presentation.main;
 
+import com.todolist.logic.todolistlogic.ToDoListSaver;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,8 +16,11 @@ public class Main extends Application {
         launch(args);
     }
 
+    static Stage ps;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+        ps = primaryStage;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/homepage.fxml"));
         Parent root = fxmlLoader.load();
@@ -28,5 +32,9 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
+    }
+
+    public static Stage getPs() {
+        return ps;
     }
 }

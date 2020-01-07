@@ -1,10 +1,17 @@
 package com.todolist.presentation.components;
 
 import com.todolist.domain.interfaces.ITask;
+import com.todolist.logic.todolistlogic.ToDoListSaver;
+import com.todolist.presentation.controllers.EditTaskPageController;
+import com.todolist.presentation.controllers.newtaskpageController;
 import com.todolist.presentation.eventHandlers.TaskEvents;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -15,6 +22,10 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class TaskComponent extends Node {
 
@@ -39,6 +50,7 @@ public class TaskComponent extends Node {
         contextMenu = new ContextMenu();
         editMenuItem = new MenuItem("Edit");
         contextMenu.getItems().add(editMenuItem);
+        addEditOption();
     }
 
     public GridPane getLayout() {
@@ -55,6 +67,12 @@ public class TaskComponent extends Node {
         System.out.println(parentProperty().toString());
         layout.getColumnConstraints().add(col1);
         addRightCLickEvent();
+        checkBox.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                task.setChecked(newValue);
+            }
+        });
 
     }
 
@@ -69,5 +87,41 @@ public class TaskComponent extends Node {
                 }
             }
         });
+    }
+    public void addEditOption(){
+        editMenuItem.setOnAction(e -> {
+            try {
+                EditTaskPageController editTaskPageController = new EditTaskPageController();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/newtaskpage.fxml"));
+                fxmlLoader.setController(editTaskPageController);
+                Parent root = fxmlLoader.load();
+                Stage window = new Stage();
+                Scene scene = new Scene(root, 600, 400);
+                window.setScene(scene);
+                window.initModality(Modality.APPLICATION_MODAL);
+                editTaskPageController.setWorkTask(task);
+                window.showAndWait();
+                window.setTitle("taak Editen");
+                task = editTaskPageController.getAnswer();
+                refresh();
+
+            }catch (IOException ex){
+                System.out.println(ex.getMessage());
+                System.out.println(ex.getCause());
+                System.out.println(ex.getStackTrace().toString());
+            }
+        });
+    }
+
+    public void refresh(){
+        taskTitleLabel.setText(task.getTitle());
+        if(task.isChecked()){
+            checkBox.setSelected(true);
+        }
+    }
+
+    public ITask getTask() {
+        return task;
     }
 }

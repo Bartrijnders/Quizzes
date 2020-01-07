@@ -16,6 +16,8 @@ public interface ITask {
 
     ILabel getLabel();
 
+    void setDateOfCreation(Date dateOfCreation);
+
     void setLabel(ILabel label);
 
     void setDetails(List<IDetail> details);
