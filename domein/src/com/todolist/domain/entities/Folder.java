@@ -4,6 +4,7 @@ import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Folder implements IFolder, Serializable {
@@ -12,6 +13,7 @@ public class Folder implements IFolder, Serializable {
 
     public Folder(String title) {
         this.title = title;
+        this.items = new ArrayList<>();
     }
 
     @Override

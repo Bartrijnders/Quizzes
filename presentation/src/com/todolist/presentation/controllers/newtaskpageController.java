@@ -1,7 +1,9 @@
 package com.todolist.presentation.controllers;
 
 import com.todolist.domain.factorys.TaskFactory;
+import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
+import com.todolist.logic.folderlogic.TaskToFolderAdder;
 import com.todolist.logic.todolistlogic.LocalDateToDateConV;
 import com.todolist.logic.todolistlogic.ToDoListSaver;
 import com.todolist.presentation.alerts.ReqInfoAlert;
@@ -42,6 +44,8 @@ public class newtaskpageController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
+    private IFolder folder;
+
 
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
@@ -56,12 +60,17 @@ public class newtaskpageController implements Initializable {
         }
         else{
             answer = TaskFactory.create(titleTextField.getText(), LocalDateToDateConV.convertToDate(datePicker.getValue()));
+            TaskToFolderAdder.add(folder, answer);
             close();
         }
     }
 
     public ITask getAnswer(){
         return answer;
+    }
+
+    public void setFolder(IFolder folder) {
+        this.folder = folder;
     }
 
     @Override

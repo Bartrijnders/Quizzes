@@ -9,18 +9,16 @@ import com.todolist.presentation.components.TaskComponent;
 import com.todolist.presentation.eventHandlers.homepage.NewFolderButtonEvent;
 import com.todolist.presentation.eventHandlers.homepage.NewTaskButtonEvent;
 import com.todolist.presentation.main.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import javax.swing.event.ChangeListener;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -55,6 +53,8 @@ public class HomePageController implements Initializable {
 
     private IFolder folder;
 
+    private MultipleSelectionModel multipleSelectionModel;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = ToDoListLoader.load();
@@ -62,11 +62,15 @@ public class HomePageController implements Initializable {
         ClearList.clear(list);
         shapeVbox();
         getTreeviewContent();
+        setActionListenerTreeview();
+        multipleSelectionModel = contentTreeview.getSelectionModel();
+        multipleSelectionModel.select(0);
         getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
         newTaskButton.setOnAction(e -> handleNewButton(e));
         newFolderButton.setOnAction(e -> handleNewFolderButton(e));
         datePicker.valueProperty().addListener((observable, oldValue, newValue) -> getItems(LocalDateToDateConV.convertToDate(newValue)));
         Main.getPs().setOnCloseRequest(e->ToDoListSaver.save(list));
+
     }
 
     public void shapeVbox(){
@@ -80,7 +84,7 @@ public class HomePageController implements Initializable {
 
     public void getItems(Date date){
         TaskGetterDate taskGetterDate = new TaskGetterDate();
-        ArrayList<ITask> worklist = taskGetterDate.getTaskByDate(list, date);
+        ArrayList<ITask> worklist = taskGetterDate.getTaskByDate(list,getSelectedFolder(multipleSelectionModel), date);
         viewVbox.getChildren().clear();
         if(!worklist.isEmpty())
         for(ITask task : worklist){
@@ -93,19 +97,7 @@ public class HomePageController implements Initializable {
         //root branch
         contentTreeview.setRoot(null);
         boolean check = false;
-        IFolder rootFolder;
-        for(IFolder f : list.getFolders()){
-            if(f.getTitle().equals("Folder"));
-            rootFolder = f;
-            check= true;
-            break;
-        }
-        if(check == false){
-            rootFolder = FolderFactory.create("Folder");
-        }
-        else{
-            rootFolder = null;
-        }
+        IFolder rootFolder = FolderFactory.create("FOLDERS");
         TreeItem<IFolder> root;
         root = new TreeItem<>(rootFolder);
         root.setExpanded(true);
@@ -129,7 +121,7 @@ public class HomePageController implements Initializable {
 
     public void handleNewButton(ActionEvent e){
         NewTaskButtonEvent newTaskButtonEvent = new NewTaskButtonEvent();
-        task = newTaskButtonEvent.handleClick(e);
+        task = newTaskButtonEvent.handleClick(e, getSelectedFolder(multipleSelectionModel));
         if(task != null){
             list.getItems().add(task);
             ToDoListSaver.save(list);
@@ -151,6 +143,22 @@ public class HomePageController implements Initializable {
             getTreeviewContent();
         }
 
+    }
+
+    public IFolder getSelectedFolder(MultipleSelectionModel multipleSelectionModel){
+        TreeItem<IFolder> selectedItem = (TreeItem<IFolder>)multipleSelectionModel.getSelectedItem();
+        IFolder folder = selectedItem.getValue();
+        return folder;
+    }
+
+
+    public void setActionListenerTreeview(){
+        contentTreeview.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TreeItem<IFolder>>() {
+            @Override
+            public void changed(ObservableValue<? extends TreeItem<IFolder>> observable, TreeItem<IFolder> oldValue, TreeItem<IFolder> newValue) {
+                getItems(LocalDateToDateConV.convertToDate(datePicker.getValue()));
+            }
+        });
     }
 
 

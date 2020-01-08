@@ -1,5 +1,6 @@
 package com.todolist.presentation.eventHandlers.homepage;
 
+import com.todolist.domain.interfaces.IFolder;
 import com.todolist.domain.interfaces.ITask;
 import com.todolist.presentation.controllers.newtaskpageController;
 import javafx.event.ActionEvent;
@@ -16,9 +17,10 @@ import java.io.IOException;
 
 public class NewTaskButtonEvent {
 
-    public ITask handleClick(ActionEvent event){
+    public ITask handleClick(ActionEvent event, IFolder folder){
         try {
             newtaskpageController newtaskpageController = new newtaskpageController();
+            newtaskpageController.setFolder(folder);
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/newtaskpage.fxml"));
             fxmlLoader.setController(newtaskpageController);

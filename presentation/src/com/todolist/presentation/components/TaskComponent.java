@@ -53,13 +53,7 @@ public class TaskComponent extends Node {
         createLayout();
         layout.add(taskTitleLabel,0,1,1,1);
         layout.add(checkBox,1,1,1,1);
-        contextMenu = new ContextMenu();
-        editMenuItem = new MenuItem("Edit");
-        deleteMenuItem = new MenuItem(("Delete"));
-        contextMenu.getItems().add(editMenuItem);
-        contextMenu.getItems().add(deleteMenuItem);
-        addOptions();
-        addDeleteOption();
+        addContextMenu();
     }
 
     public GridPane getLayout() {
@@ -141,6 +135,17 @@ public class TaskComponent extends Node {
                 homePageController.getItems(task.getDateOfCreation());
             }
         });
+    }
+
+    public void addContextMenu(){
+        contextMenu = new ContextMenu();
+        editMenuItem = new MenuItem("Edit");
+        deleteMenuItem = new MenuItem(("Delete"));
+        contextMenu.getItems().add(editMenuItem);
+        contextMenu.getItems().add(deleteMenuItem);
+        addOptions();
+        addDeleteOption();
+        ContextMenu folderMenu = new ContextMenu();
     }
 
 
