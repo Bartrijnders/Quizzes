@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '.../presentation/src/com/todolist/presentation/controllers/HomePageController.java [presentation]'" />
-    <option name="defaultScopeName" value="File '.../presentation/src/com/todolist/presentation/controllers/HomePageController.java [presentation]'" />
-    <option name="SEARCH_SCOPE" value="File '.../presentation/src/com/todolist/presentation/controllers/HomePageController.java [presentation]'" />
+    <option name="customScope" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
+    <option name="defaultScopeName" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
+    <option name="SEARCH_SCOPE" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
   </component>
 </application>
