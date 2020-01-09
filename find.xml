@@ -2,6 +2,8 @@
   <component name="FindSettings">
     <option name="customScope" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
     <option name="defaultScopeName" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
+    <option name="localWholeWordsOnly" value="true" />
+    <option name="LOCAL_WHOLE_WORDS_ONLY" value="true" />
     <option name="SEARCH_SCOPE" value="File '.../dataacces/src/com/todolist/dataacces/filedatehandlers/IDataLoader.java [dataacces]'" />
   </component>
 </application>
