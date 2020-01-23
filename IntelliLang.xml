@@ -1,32 +1,10 @@
 <application>
   <component name="LanguageInjectionConfiguration">
-    <injection language="XML" injector-id="sql" pattern="(?i)xml(type)?">
-      <display-name>(?i)xml(type)?</display-name>
-    </injection>
-    <injection language="XML" injector-id="sql">
-      <display-name>ClickHouse XML</display-name>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("ClickHouse").insertWithFormatInput("XML")]]></place>
-    </injection>
-    <injection language="XML" injector-id="sql">
-      <display-name>Derby XML</display-name>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Derby").functionArgument(0, sqlFunctionCall().name("xmlparse").params(sqlExpressions().count(1)))]]></place>
-    </injection>
-    <injection language="XML" injector-id="sql">
-      <display-name>MySQL XML</display-name>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("MySQL").functionArgument(0, sqlFunctionCall().name("ExtractValue").params(sqlExpressions().count(2)))]]></place>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("MySQL").functionArgument(0, sqlFunctionCall().name("UpdateXML").params(sqlExpressions().count(3)))]]></place>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("MySQL").functionArgument(2, sqlFunctionCall().name("UpdateXML").params(sqlExpressions().count(3)))]]></place>
-    </injection>
-    <injection language="XML" injector-id="sql">
-      <display-name>Oracle XML</display-name>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Oracle").functionArgument(0, sqlFunctionCall().name("xmlparse", "xmltype").params(sqlExpressions().count(1)))]]></place>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Oracle").functionArgument(0, sqlFunctionCall().name("xmlserialize"))]]></place>
-    </injection>
     <injection language="XML" injector-id="sql">
       <display-name>Sybase XML</display-name>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Sybase").binaryExpressionArgument(1, sqlBinaryExpression().operation(leafTokens("xmltest").or("not", "xmltest")))]]></place>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Sybase").functionArgument(0, sqlFunctionCall().name("xmlparse", "xmlvalidate"))]]></place>
-      <place disabled="true"><![CDATA[sqlElement().forDialects("Sybase").functionArgument(1, sqlFunctionCall().name("xmlextract"))]]></place>
+      <place><![CDATA[sqlElement().forDialects("Sybase").binaryExpressionArgument(1, sqlBinaryExpression().operation(leafTokens("xmltest").or("not", "xmltest")))]]></place>
+      <place><![CDATA[sqlElement().forDialects("Sybase").functionArgument(0, sqlFunctionCall().name("xmlparse", "xmlvalidate"))]]></place>
+      <place><![CDATA[sqlElement().forDialects("Sybase").functionArgument(1, sqlFunctionCall().name("xmlextract"))]]></place>
     </injection>
   </component>
 </application>
