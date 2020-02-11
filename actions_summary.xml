@@ -5,8 +5,8 @@
         <entry key="$Delete">
           <value>
             <ActionSummary>
-              <option name="last" value="1581411892766" />
-              <option name="times" value="1" />
+              <option name="last" value="1581425737021" />
+              <option name="times" value="3" />
             </ActionSummary>
           </value>
         </entry>
@@ -45,16 +45,16 @@
         <entry key="EditorBackSpace">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412856405" />
-              <option name="times" value="324" />
+              <option name="last" value="1581425821210" />
+              <option name="times" value="357" />
             </ActionSummary>
           </value>
         </entry>
         <entry key="EditorChooseLookupItem">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412471367" />
-              <option name="times" value="2" />
+              <option name="last" value="1581425816642" />
+              <option name="times" value="3" />
             </ActionSummary>
           </value>
         </entry>
@@ -85,16 +85,16 @@
         <entry key="EditorDown">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412471114" />
-              <option name="times" value="17" />
+              <option name="last" value="1581425816163" />
+              <option name="times" value="18" />
             </ActionSummary>
           </value>
         </entry>
         <entry key="EditorEnter">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412668834" />
-              <option name="times" value="62" />
+              <option name="last" value="1581425812883" />
+              <option name="times" value="66" />
             </ActionSummary>
           </value>
         </entry>
@@ -205,8 +205,16 @@
         <entry key="NewElementSamePlace">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412181902" />
-              <option name="times" value="5" />
+              <option name="last" value="1581425777500" />
+              <option name="times" value="8" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="NewFile">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581425779888" />
+              <option name="times" value="3" />
             </ActionSummary>
           </value>
         </entry>
@@ -218,19 +226,27 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="RevealIn">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581425759154" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="Run">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412695993" />
-              <option name="times" value="25" />
+              <option name="last" value="1581425834546" />
+              <option name="times" value="27" />
             </ActionSummary>
           </value>
         </entry>
         <entry key="SaveAll">
           <value>
             <ActionSummary>
-              <option name="last" value="1581412666356" />
-              <option name="times" value="5" />
+              <option name="last" value="1581425830982" />
+              <option name="times" value="6" />
             </ActionSummary>
           </value>
         </entry>
