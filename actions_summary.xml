@@ -66,6 +66,14 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="ConfigureIcs">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626421702" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="EditorBackSpace">
           <value>
             <ActionSummary>
@@ -141,8 +149,8 @@
         <entry key="EditorPaste">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626136741" />
-              <option name="times" value="13" />
+              <option name="last" value="1581626428436" />
+              <option name="times" value="16" />
             </ActionSummary>
           </value>
         </entry>
@@ -210,11 +218,19 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="Git.Branches">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626382898" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="Git.Rebase">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626130855" />
-              <option name="times" value="1" />
+              <option name="last" value="1581626344185" />
+              <option name="times" value="2" />
             </ActionSummary>
           </value>
         </entry>
@@ -373,8 +389,8 @@
         <entry key="Vcs.QuickListPopupAction">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626197210" />
-              <option name="times" value="2" />
+              <option name="last" value="1581626379206" />
+              <option name="times" value="3" />
             </ActionSummary>
           </value>
         </entry>
