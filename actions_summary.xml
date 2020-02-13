@@ -34,11 +34,27 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="ChangesView.AddUnversioned">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626207279" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="ChangesView.Revert">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626236929" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="CommentByLineComment">
           <value>
             <ActionSummary>
-              <option name="last" value="1581427505900" />
-              <option name="times" value="4" />
+              <option name="last" value="1581625833270" />
+              <option name="times" value="5" />
             </ActionSummary>
           </value>
         </entry>
@@ -53,8 +69,8 @@
         <entry key="EditorBackSpace">
           <value>
             <ActionSummary>
-              <option name="last" value="1581442633241" />
-              <option name="times" value="630" />
+              <option name="last" value="1581626108888" />
+              <option name="times" value="634" />
             </ActionSummary>
           </value>
         </entry>
@@ -125,8 +141,8 @@
         <entry key="EditorPaste">
           <value>
             <ActionSummary>
-              <option name="last" value="1581441667101" />
-              <option name="times" value="12" />
+              <option name="last" value="1581626136741" />
+              <option name="times" value="13" />
             </ActionSummary>
           </value>
         </entry>
@@ -194,6 +210,22 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="Git.Rebase">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626130855" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Github.Share">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626019735" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="GotoClass">
           <value>
             <ActionSummary>
@@ -242,6 +274,14 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="ResetToMySettings">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626289677" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="RevealIn">
           <value>
             <ActionSummary>
@@ -270,6 +310,14 @@
           <value>
             <ActionSummary>
               <option name="last" value="1581412301510" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Start.Use.Vcs">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626041192" />
               <option name="times" value="1" />
             </ActionSummary>
           </value>
@@ -322,6 +370,22 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="Vcs.QuickListPopupAction">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626197210" />
+              <option name="times" value="2" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Vcs.VcsClone">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626175404" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="WelcomeScreen.CreateNewProject">
           <value>
             <ActionSummary>
@@ -333,8 +397,8 @@
         <entry key="WelcomeScreen.OpenProject">
           <value>
             <ActionSummary>
-              <option name="last" value="1581411402101" />
-              <option name="times" value="1" />
+              <option name="last" value="1581625652934" />
+              <option name="times" value="2" />
             </ActionSummary>
           </value>
         </entry>
