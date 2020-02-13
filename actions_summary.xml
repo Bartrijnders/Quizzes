@@ -50,6 +50,14 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="CheckinProject">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626443753" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="CommentByLineComment">
           <value>
             <ActionSummary>
@@ -69,16 +77,16 @@
         <entry key="ConfigureIcs">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626421702" />
-              <option name="times" value="1" />
+              <option name="last" value="1581627077796" />
+              <option name="times" value="2" />
             </ActionSummary>
           </value>
         </entry>
         <entry key="EditorBackSpace">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626108888" />
-              <option name="times" value="634" />
+              <option name="last" value="1581626495427" />
+              <option name="times" value="635" />
             </ActionSummary>
           </value>
         </entry>
@@ -149,8 +157,8 @@
         <entry key="EditorPaste">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626428436" />
-              <option name="times" value="16" />
+              <option name="last" value="1581626552682" />
+              <option name="times" value="17" />
             </ActionSummary>
           </value>
         </entry>
@@ -221,7 +229,15 @@
         <entry key="Git.Branches">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626382898" />
+              <option name="last" value="1581626739897" />
+              <option name="times" value="2" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Git.Pull">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626760282" />
               <option name="times" value="1" />
             </ActionSummary>
           </value>
@@ -247,6 +263,14 @@
             <ActionSummary>
               <option name="last" value="1581440608734" />
               <option name="times" value="5" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="MarkNotificationsAsRead">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626846089" />
+              <option name="times" value="2" />
             </ActionSummary>
           </value>
         </entry>
@@ -285,8 +309,8 @@
         <entry key="ProjectRefreshAction">
           <value>
             <ActionSummary>
-              <option name="last" value="1581427518135" />
-              <option name="times" value="4" />
+              <option name="last" value="1581626822532" />
+              <option name="times" value="6" />
             </ActionSummary>
           </value>
         </entry>
@@ -386,11 +410,35 @@
             </ActionSummary>
           </value>
         </entry>
+        <entry key="Vcs.Push">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626826443" />
+              <option name="times" value="6" />
+            </ActionSummary>
+          </value>
+        </entry>
         <entry key="Vcs.QuickListPopupAction">
           <value>
             <ActionSummary>
-              <option name="last" value="1581626379206" />
-              <option name="times" value="3" />
+              <option name="last" value="1581626734645" />
+              <option name="times" value="4" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Vcs.ShowTabbedFileHistory">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626848439" />
+              <option name="times" value="2" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="Vcs.UpdateProject">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626854587" />
+              <option name="times" value="6" />
             </ActionSummary>
           </value>
         </entry>
@@ -471,6 +519,22 @@
             <ActionSummary>
               <option name="last" value="1581412688478" />
               <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="git4idea.ui.branch.GitBranchPopupActions$GitNewBranchAction">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626744050" />
+              <option name="times" value="1" />
+            </ActionSummary>
+          </value>
+        </entry>
+        <entry key="org.jetbrains.plugins.github.authentication.ui.GHAccountsPanel$2">
+          <value>
+            <ActionSummary>
+              <option name="last" value="1581626722142" />
+              <option name="times" value="2" />
             </ActionSummary>
           </value>
         </entry>
