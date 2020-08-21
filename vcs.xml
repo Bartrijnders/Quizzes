@@ -14,6 +14,10 @@
           <option name="url" value="https://github.com/amigoscode/software-testing.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/darbyluv2code/spring-and-hibernate-for-beginners.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Desktop" />
