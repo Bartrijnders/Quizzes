@@ -1,0 +1,6 @@
+<application>
+  <component name="ExternalResourceManagerImpl">
+    <resource url="http://www.springframework.org/schema/beans/spring-beans.xsd" location="$USER_HOME$/Library/Caches/JetBrains/IntelliJIdea2020.2/extResources/334543e7_spring-beans.xsd" />
+    <resource url="http://www.springframework.org/schema/context/spring-context.xsd" location="$USER_HOME$/Library/Caches/JetBrains/IntelliJIdea2020.2/extResources/a93b54e7_spring-context.xsd" />
+  </component>
+</application>
