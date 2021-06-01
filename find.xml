@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '.../data/src/main/java/org/example/doa/postgres/ItemPostgresDao.java [Data]'" />
-    <option name="defaultScopeName" value="File '.../data/src/main/java/org/example/doa/postgres/ItemPostgresDao.java [Data]'" />
+    <option name="customScope" value="File '.../javafx/src/main/resources/org/example/toevoegingsComponent.fxml [javafx]'" />
+    <option name="defaultScopeName" value="File '.../javafx/src/main/resources/org/example/toevoegingsComponent.fxml [javafx]'" />
     <option name="regularExpressions" value="true" />
     <option name="REGULAR_EXPRESSIONS" value="true" />
-    <option name="SEARCH_SCOPE" value="File '.../data/src/main/java/org/example/doa/postgres/ItemPostgresDao.java [Data]'" />
+    <option name="SEARCH_SCOPE" value="File '.../javafx/src/main/resources/org/example/toevoegingsComponent.fxml [javafx]'" />
   </component>
 </application>
